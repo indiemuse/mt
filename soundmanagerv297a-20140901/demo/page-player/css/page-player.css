@@ -45,7 +45,9 @@ ul.use-spectrum .spectrum-box .spectrum {
 }
 
 ul.playlist {
- list-style-type:none;
+font-family: Helvetica, Verdana, sans-serif;
+color: black;
+font-size: 100%;
  margin:0px;
  padding:0px;
  /* font trickery */
@@ -100,7 +102,7 @@ ul.playlist li:hover a {
 
 ul.playlist li.sm2_playing,
 ul.playlist li.sm2_playing:hover {
- background-color:#6699cc;
+ background-color:#000000;
 }
 
 ul.playlist li.sm2_paused {
@@ -165,7 +167,7 @@ ul.playlist li .controls {
 ul.playlist li .controls .statusbar {
  position:relative;
  height:0.5em;
- background-color:#ccddff;
+ background-color:#EAEAE8;
  border:2px solid #fff;
  border-radius:2px;
  overflow:hidden;
@@ -190,8 +192,8 @@ ul.playlist li .controls .statusbar .annotation {
 }
 
 ul.playlist li .controls .statusbar .position {
- background-color:#336699;
- border-right:3px solid #336699;
+ background-color:#4aecec;
+ border-right:3px solid #4aecec;
  border-radius:3px;
 }
 
@@ -223,11 +225,11 @@ ul.playlist li .timing {
  width:auto;
  height:1em;
  padding:3px 5px;
- background-color:#5588bb;
+ background-color:#4aecec;
  border:1px solid #99ccff;
  border-radius:4px;
  letter-spacing:0px;
- font:44% monaco,"VT-100","lucida console",courier,system;
+ font:44% monaco,"VT-100","lucida console",courier,system;color: black;
  line-height:1em;
  vertical-align:middle;
 }
