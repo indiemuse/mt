@@ -1,7 +1,22 @@
-h1, h2 {
-  font-family: sans-serif;
-  color: purple;
+h1, h2, h3 {
+  margin-top: 15px;
 } 
+
+h1{
+  font-family: Helvetica, Verdana, sans-serif;
+  color: black;
+  font-size: 700%;
+} 
+h2{
+  font-family: Helvetica, Verdana, sans-serif;
+  color: black;
+  font-size: 200%;
+}
+h3{
+  font-family: Helvetica, Verdana, sans-serif;
+  color: black;
+  font-size: 300%;
+}
 
 .email-signup {
     width:960px;
@@ -30,4 +45,11 @@ h1, h2 {
     display: inline-block;
     border: none;
     -webkit-appearance: push-button;
+}
+#mc_embed_signup  {
+  background:#000000; 
+  clear:left; 
+  font:10px Helvetica,Arial,sans-serif; 
+  width:100%;
+  color: white;
 }
