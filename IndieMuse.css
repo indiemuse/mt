@@ -1,12 +1,7 @@
-<style>
 h1, h2 {
-font-family: sans-serif;
-color: purple;
-} h1 {
-} p {	
-}
-
-}
+  font-family: sans-serif;
+  color: purple;
+} 
 
 .email-signup {
     width:960px;
@@ -36,4 +31,3 @@ color: purple;
     border: none;
     -webkit-appearance: push-button;
 }
-    </style>
