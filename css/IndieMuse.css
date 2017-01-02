@@ -17,6 +17,10 @@ h3{
   color: black;
   font-size: 300%;
 }
+body{
+  background: url("/images/p6.png");
+}
+
 
 .email-signup {
     width:960px;
