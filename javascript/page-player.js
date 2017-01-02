@@ -546,7 +546,6 @@ function PagePlayer() {
   };
 
   this.handleClick = function(e) {
-
     // a sound (or something) was clicked - determine what and handle appropriately
 
     if (e.button === 2) {
@@ -555,6 +554,7 @@ function PagePlayer() {
       }
       return pl.config.allowRightClick; // ignore right-clicks
     }
+    
     var o = self.getTheDamnTarget(e),
         sURL, soundURL, thisSound, oControls, oLI, str;
     if (!o) {
@@ -594,7 +594,7 @@ function PagePlayer() {
       // and decorate the link too, if needed
       self.initItem(o);
 
-      soundURL = o.href;
+      soundURL = "http://indiemuse.com/MT/Tracks" + o.pathname + '.mp3'
       thisSound = self.getSoundByObject(o);
 
       if (thisSound) {
