@@ -199,7 +199,7 @@ function PagePlayer() {
     return matches;
 
   });
-  
+
   this.isChildOfClass = function(oChild, oClass) {
     if (!oChild || !oClass) {
       return false;
@@ -495,7 +495,7 @@ function PagePlayer() {
       self.setPageIcon(self.vuMeterData[parseInt(16*this.peakData.left,10)][parseInt(16*this.peakData.right,10)]);
     }
   };
-  
+
   this.updateGraph = function() {
     if (pl.config.flashVersion < 9 || (!pl.config.useWaveformData && !pl.config.useEQData)) {
       return false;
@@ -516,7 +516,7 @@ function PagePlayer() {
       }
     }
   };
-  
+
   this.resetGraph = function() {
     if (!pl.config.useEQData || pl.config.flashVersion<9) {
       return false;
@@ -530,7 +530,7 @@ function PagePlayer() {
       sbC[255-i].style.height = nHeight;
     }
   };
-  
+
   this.updateTime = function() {
     var str = self.strings.timing.replace('%s1',self.getTime(this.position,true));
     str = str.replace('%s2',self.getTime(self.getDurationEstimate(this),true));
@@ -540,7 +540,7 @@ function PagePlayer() {
   this.getTheDamnTarget = function(e) {
     return (e.target||(window.event?window.event.srcElement:null));
   };
-  
+
   this.withinStatusBar = function(o) {
     return (self.isChildOfClass(o,'playlist')) && (self.isChildOfClass(o,'controls'));
   };
@@ -554,7 +554,7 @@ function PagePlayer() {
       }
       return pl.config.allowRightClick; // ignore right-clicks
     }
-    
+
     var o = self.getTheDamnTarget(e),
         sURL, soundURL, thisSound, oControls, oLI, str;
     if (!o) {
@@ -594,7 +594,14 @@ function PagePlayer() {
       // and decorate the link too, if needed
       self.initItem(o);
 
-      soundURL = "/MP3s/" + o.pathname + '.mp3'
+      if (o.pathname.indexOf("mix") !== -1) {
+        var fixedLink = o.pathname.split("/");
+        fixedLink.splice(0, 3);
+        fixedLink = fixedLink.join("/");
+      } else {
+        var fixedLink = o.pathname;
+      }
+      soundURL = "http://indiemuse.com/IMM/MP3s/" + fixedLink + ".mp3"
       thisSound = self.getSoundByObject(o);
 
       if (thisSound) {
@@ -696,7 +703,7 @@ function PagePlayer() {
     }
 
   };
-  
+
   this.handleMouseDown = function(e) {
     // a sound link was clicked
     if (isTouchDevice && e.touches) {
@@ -726,7 +733,7 @@ function PagePlayer() {
     self.addClass(self.lastSound._data.oControls,'dragging');
     return self.stopEvent(e);
   };
-  
+
   this.handleMouseMove = function(e) {
     if (isTouchDevice && e.touches) {
       e = e.touches[0];
@@ -753,7 +760,7 @@ function PagePlayer() {
     e.stopPropagation = true;
     return false;
   };
-  
+
   this.stopDrag = function(e) {
     if (self.dragActive) {
       self.removeClass(self.lastSound._data.oControls,'dragging');
@@ -769,7 +776,7 @@ function PagePlayer() {
       return self.stopEvent(e);
     }
   };
-  
+
   this.handleStatusClick = function(e) {
     self.setPosition(e);
     if (!pl.hasClass(self.lastSound._data.oLI,self.css.sPaused)) {
@@ -777,7 +784,7 @@ function PagePlayer() {
     }
     return self.stopEvent(e);
   };
-  
+
   this.stopEvent = function(e) {
     if (typeof e !== 'undefined') {
       if (typeof e.preventDefault !== 'undefined') {
@@ -789,7 +796,7 @@ function PagePlayer() {
     }
     return false;
   };
- 
+
   this.setPosition = function(e) {
     // called from slider control
     var oThis = self.getTheDamnTarget(e),
@@ -873,7 +880,7 @@ function PagePlayer() {
         // for debugging VU images
         /*
         var o = document.createElement('img');
-        o.style.marginRight = '5px'; 
+        o.style.marginRight = '5px';
         o.src = self.vuMeterData[i][j];
         document.documentElement.appendChild(o);
         */
@@ -1076,3 +1083,10 @@ soundManager.onready(function() {
   pagePlayer = new PagePlayer();
   pagePlayer.init(typeof PP_CONFIG !== 'undefined' ? PP_CONFIG : null);
 });
+
+window.onload = function() {
+  var username = "David";
+  var hostname = "indiemuse.com";
+  var linktext = username + "@" + hostname ;
+  document.querySelector("#contact").innerHTML = "Contact: <a href='" + "mail" + "to:" + username + "@" + hostname + "'>" + linktext + "</a>";
+}

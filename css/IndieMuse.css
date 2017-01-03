@@ -1,12 +1,26 @@
 h1, h2, h3 {
   margin-top: 15px;
-} 
+}
+
+.header a,
+#contact a {
+  color: black !important;
+  text-decoration: none;
+}
+#contact a:hover,
+.header a:hover {
+  color: #333333 !important;
+}
+
+#contact {
+  font-family: Helvetica, Verdana, sans-serif;
+}
 
 h1{
   font-family: Helvetica, Verdana, sans-serif;
   color: black;
   font-size: 700%;
-} 
+}
 h2{
   font-family: Helvetica, Verdana, sans-serif;
   color: black;
@@ -50,10 +64,14 @@ body{
     border: none;
     -webkit-appearance: push-button;
 }
-#mc_embed_signup  {
-  background:#000000; 
-  clear:left; 
-  font:10px Helvetica,Arial,sans-serif; 
+#mc_embed_signup {
+  background:#000000;
+  clear:left;
+  font:10px Helvetica,Arial,sans-serif;
   width:100%;
   color: white;
+}
+
+form {
+  margin-bottom: -60px;
 }
