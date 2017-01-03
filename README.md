@@ -10,7 +10,7 @@ run
 And visit http://localhost:4000
 
 ## Updates added
-Added new static homepage:
+* Added new static homepage:
     * under wp-content/themes/paalam/front-page.php <- New page.
-    * MP3s remain under /IMM/MP3s
-    * /mix/ has the previous mixtapes
+* MP3s remain under /IMM/MP3s
+* /mix/ has the previous mixtapes
