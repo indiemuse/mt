@@ -594,7 +594,7 @@ function PagePlayer() {
       // and decorate the link too, if needed
       self.initItem(o);
 
-      soundURL = "http://indiemuse.com/MT/Tracks" + o.pathname + '.mp3'
+      soundURL = "/MP3s/ + o.pathname + '.mp3'
       thisSound = self.getSoundByObject(o);
 
       if (thisSound) {
