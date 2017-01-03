@@ -23,11 +23,11 @@ body{
 
 
 .email-signup {
-    width:960px;
+    width:1572px;
     text-align:left;
     font-size: 28px;
-    padding:40px 0 0 40px;
-    margin: 40px auto 0 auto;
+    padding:55px 0 0 0px;
+    margin: 20px left left;
 }
 
 .email-signup a {
